@@ -1,0 +1,89 @@
+##  code for rock-paper-sissor:
+#include <bits/stdc++.h> 
+#include <cstdlib>
+
+using namespace std;
+
+#define ll long long
+
+int main() 
+{
+	/*	enjoooooy my game	*/
+	cout<<"------------Are you ready?------------\n";
+	string a,b;
+	cout<<"Enter your weapon:";
+	cin>>a;
+	vector<char> s(a.begin(), a.end());
+	string na;
+	for(ll i=0;i<s.size();i++)
+	{
+		if(isupper(s[i]))
+		{
+			s[i] = tolower(s[i]);
+		}
+		na += s[i];
+	}
+	while(1==1)
+	{
+		if(na != "rock" && na != "paper" && na != "sissor")
+		{
+			cout<<"I am not a fool! enter a valid weapon\n";
+			string x;
+			cin>>x;
+			na = "";
+			vector<char> ns(x.begin(), x.end());
+			for(ll i=0;i<ns.size();i++)
+			{
+				if(isupper(ns[i]))
+				{
+					ns[i] = tolower(ns[i]);
+				}
+				na += ns[i];
+			}
+		}
+		else
+		{
+			break;
+		}
+	}
+	srand(time(0));
+	ll r = (rand()%3)+1;
+	if(r==1)
+	{
+		cout<<"rock\n";
+		if(na == "rock")
+		{
+			cout<<"Better luck next time\n";
+		}
+		else
+		{
+			cout<<"You won!!   Awesome\n";
+		}
+	}
+	if(r==2)
+	{
+		cout<<"sissor\n";
+		if(na == "sissor")
+		{
+			cout<<"Better luck next time\n";
+		}
+		else
+		{
+			cout<<"You won!!   Awesome\n";
+		}
+	}
+	if(r==3)
+	{
+		cout<<"paper\n";
+		if(na == "paper")
+		{
+			cout<<"Better luck next time\n";
+		}
+		else
+		{
+			cout<<"You won!!   Awesome\n";
+		}
+	}
+	cout<<"------------ thanks for playing ------------\n";
+	cout<<"						game by tourpran\n";
+}
