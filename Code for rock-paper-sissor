@@ -51,7 +51,7 @@ int main()
 	if(r==1)
 	{
 		cout<<"rock\n";
-		if(na == "rock")
+		if(na == "rock" || na == "sissor")
 		{
 			cout<<"Better luck next time\n";
 		}
@@ -63,7 +63,7 @@ int main()
 	if(r==2)
 	{
 		cout<<"sissor\n";
-		if(na == "sissor")
+		if(na == "sissor" || na == "paper")
 		{
 			cout<<"Better luck next time\n";
 		}
@@ -75,7 +75,7 @@ int main()
 	if(r==3)
 	{
 		cout<<"paper\n";
-		if(na == "paper")
+		if(na == "paper" || na == "rock")
 		{
 			cout<<"Better luck next time\n";
 		}
