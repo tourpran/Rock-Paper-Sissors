@@ -1,4 +1,4 @@
-##  code for rock-paper-sissor:
+/*	code for rock-paper-sissor:	*/
 #include <bits/stdc++.h> 
 #include <cstdlib>
 
