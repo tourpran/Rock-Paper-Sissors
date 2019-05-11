@@ -1,6 +1,8 @@
 /*	code for rock-paper-sissors:	*/
+/*	code for rock-paper-sissors:	*/
 #include <bits/stdc++.h> 
 #include <cstdlib>
+#include <boost/algorithm/string.hpp>
 
 using namespace std;
 
@@ -8,83 +10,80 @@ using namespace std;
 
 int main() 
 {
-	/*	enjoooooy my game	*/
-	cout<<"------------Are you ready?------------\n";
-	string a,b;
-	cout<<"The weapons are rock/paper/sissors\n";
-	cout<<"Enter your weapon: ";
-	cin>>a;
-	vector<char> s(a.begin(), a.end());
-	string na;
-	for(ll i=0;i<s.size();i++)
+	ll testcase,NoOfWins=0;
+	cout<<"How many times do you want to play the game : ";
+	cin>>testcase;
+	cout<<"-----------ARE YOU READY-----------"<<endl;
+	ll noofcomputerwins = testcase;
+	while(testcase--)
 	{
-		if(isupper(s[i]))
+		string weaponchosen;
+		cout<<"The weapons are rock/paper/sissors\n";
+		cout<<"Enter your weapon: ";
+		cin>>weaponchosen;
+		boost::to_lower(weaponchosen);
+		do		
 		{
-			s[i] = tolower(s[i]);
-		}
-		na += s[i];
-	}
-	while(1==1)
-	{
-		if(na != "rock" && na != "paper" && na != "sissors")
-		{
-			cout<<"I am not a fool! enter a valid weapon\n";
-			string x;
-			cin>>x;
-			na = "";
-			vector<char> ns(x.begin(), x.end());
-			for(ll i=0;i<ns.size();i++)
+			if(weaponchosen != "rock" && weaponchosen != "paper" && weaponchosen != "sissors")
 			{
-				if(isupper(ns[i]))
-				{
-					ns[i] = tolower(ns[i]);
-				}
-				na += ns[i];
+				cout<<"Are you kidding ? You chose "<<weaponchosen<<end;
+				cout<<"chose something :";
+				string newweaponchosen;
+				cin>>newweaponchosen;
+				weaponchosen = "";
+				boost::to_lower(newweaponchosen);
+				weaponchosen = newweaponchosen;
+			}
+			else
+			{
+				break;
 			}
 		}
-		else
+		while(true);
+		srand(time(0));
+		ll r = (rand()%3)+1;
+		if(r==1)
 		{
-			break;
+			cout<<"computer chose ---- rock\n";	 
+			if(weaponchosen == "rock" || weaponchosen == "sissors")
+			{
+				cout<<"Better luck next time\n";
+			}
+			else
+			{
+				cout<<"You won!!\n";
+				NoOfWins++;
+			}
 		}
+		if(r==2)
+		{
+			cout<<"sissors\n";
+			if(weaponchosen == "sissors" || weaponchosen == "paper")
+			{
+				cout<<"Better luck next time\n";
+			}
+			else
+			{
+				cout<<"You won!!\n";
+				NoOfWins++;
+			}
+		}
+		if(r==3)
+		{
+			cout<<"paper\n";
+			if(weaponchosen == "paper" || weaponchosen == "rock")
+			{
+				cout<<"Better luck next time\n";
+			}
+			else
+			{
+				cout<<"You won!!\n";
+				NoOfWins++;
+			}
+		}	
 	}
-	srand(time(0));
-	ll r = (rand()%3)+1;
-	if(r==1)
-	{
-		cout<<"rock\n";
-		if(na == "rock" || na == "sissors")
-		{
-			cout<<"Better luck next time\n";
-		}
-		else
-		{
-			cout<<"You won!!   Awesome\n";
-		}
-	}
-	if(r==2)
-	{
-		cout<<"sissors\n";
-		if(na == "sissors" || na == "paper")
-		{
-			cout<<"Better luck next time\n";
-		}
-		else
-		{
-			cout<<"You won!!   Awesome\n";
-		}
-	}
-	if(r==3)
-	{
-		cout<<"paper\n";
-		if(na == "paper" || na == "rock")
-		{
-			cout<<"Better luck next time\n";
-		}
-		else
-		{
-			cout<<"You won!!   Awesome\n";
-		}
-	}
-	cout<<"------------ thanks for playing ------------\n";
-	cout<<"						game by tourpran\n";
+	cout<<"Total scoreboard: \n";
+	cout<<"Computers score : "<<noofcomputerwins-NoOfWins<<endl;
+	cout<<"Your score      : "<<NoOfWins<<endl;
 }
+
