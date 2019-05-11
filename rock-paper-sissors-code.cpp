@@ -1,5 +1,4 @@
 /*	code for rock-paper-sissors:	*/
-/*	code for rock-paper-sissors:	*/
 #include <bits/stdc++.h> 
 #include <cstdlib>
 #include <boost/algorithm/string.hpp>
