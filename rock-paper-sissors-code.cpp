@@ -32,6 +32,7 @@ int main()
 				weaponchosen = "";
 				boost::to_lower(newweaponchosen);
 				weaponchosen = newweaponchosen;
+				
 			}
 			else
 			{
